@@ -1,0 +1,86 @@
+{% extends 'cscr/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>introduction</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	{% block content %}
+	<div class="container">
+  		<div class="row">
+    		<div class="col col-left image">
+      			<img src="{% static 'cscr/img/1010.jpg' %}" alt=""  > 
+    		</div>
+	    	<div class="col col-right" style="padding-top: 8%;">
+	    		
+	    		<p style="text-align: left; padding-right: 2%;">
+	    		<h2>簡介</h2>
+	      		【歷史沿革】 
+				「宗教研究」在西方學術界已有一段長期的發展，近來因受「地球村」思想、多元文化主義、地域主義、政經衝突、科技整合等因素的影響，宗教研究愈加受到重視。台灣社會在急速發展後，政治、經濟、教育及各類觀念與思想潮流等進展迅速，許多宗教團體與宗教活動也大為興起，對社會各層面都產生深刻的影響。若欲了解台灣的現在與未來，宗教實扮演不容忽視的角色。
+
+				政治大學歷來以人文與社會科學的學術研究為主，其中隸屬於這些院系的教師，有許多多年來即從事宗教理論與實際的調查研究。而目前隨著學術風氣的開放，學科整合的需求，以及國內各類宗教團體快速的興起，彼此之間相互的激盪，早幾年一些有心的教師乃結合校外學者，於1996年3月成立「宗教研究中心」，試圖從宗教、哲學、史學、文學、社會學、人類學等不同的角度，進行跨科際的宗教研究，藉以整合不同學術領域的人才，期望能推展並提升研究風氣，進而推動台灣的宗教研究。十餘年來「宗教研究中心」的各項活動，成效顯著，頗獲學界的肯定，也引起其他教授與年輕學子對此一學術領域的興趣。
+				</br>	
+				</br>
+				【成立宗旨】 
+				本中心期以整合本校和不同宗教、學校、社團等領域相關研究的人力資源為重點，推動以華人宗教為核心之宗教史、宗教理論、宗教現象以及相關之學術研究。在學術成果的展示上，發行學術刊物、設置學術網站，建立學界以華人宗教為議題的學術交流平台，並與國內外各宗教研究之學術團體相互交流，為國內建置一大型的資料庫與網站連結，未來的發展方向就是成為國內外可以公開使用的學術中心。
+				</p>
+	    	</div>
+  		</div>
+  	</div>	
+
+
+
+
+
+	 
+
+
+	 <style type="text/css">
+	 	*{
+    		font-family: 'Open Sans', sans-serif;
+    		    	}
+	 	.row{
+	 		padding-left: -3%;
+	 		padding-top: 1%;
+	 		margin: 3%,6%,8%,8%;
+	 	}
+	 	
+	 	.image{
+	 		padding-top: 10%;
+	 		padding-left: 5%;
+	 		width: 100%;
+	 		/* width 400px*/
+	 		height: 300px;
+	 	}
+	 	img{
+	 		max-height: 350px;
+	 		max-width: 500px;
+	 	}
+		.text{
+			padding-right: 5%;
+			padding-left: 2%;
+		}
+
+	 	p{
+	 		word-break: break-all;
+	 	}
+
+	 
+	 	
+	 </style>
+
+
+	
+</body>
+</html>
+
+{% endblock %}

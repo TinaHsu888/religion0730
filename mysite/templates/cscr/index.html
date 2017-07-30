@@ -1,0 +1,207 @@
+{% extends  'cscr/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>homepage</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'cscr/css/style.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static  'cscr/css/style.css.map'%}">
+
+  
+
+</head>
+
+
+{% block content %}
+<body>
+  <div class="hompage_cover" >
+    <div class="title" style="  ">
+      <h2 style="font-size: 42px;color:#004d99; letter-spacing: 5px;font-family:微軟正黑體;
+      ">華人宗教研究中心</h2>
+    </div>
+  </div>
+  <div class="container">
+      <div class="col col-left">
+        <div class="row">
+          <img src="http://via.placeholder.com/600x400" alt="">
+        </div>
+        <div class="row">
+          <img src="http://via.placeholder.com/600x400" alt="">
+        </div>
+        <div class="row" >
+          <img src="http://via.placeholder.com/600x400" alt="" style="height: 300px;">
+        </div>
+      </div>
+      <div class="col col-right">
+
+        <div class="row" >
+          <img src="http://via.placeholder.com/400x600" alt="">
+        </div>
+        <div class="row">
+           <img src="http://via.placeholder.com/400x600" alt="" style="height: 500px;">
+        </div>
+      
+        
+</div>  
+
+
+
+
+
+
+
+<style type="text/css">
+*{
+        font-family: 'Open Sans', sans-serif;
+              }
+
+
+.container {
+ 
+  max-width: 960px;
+  margin: auto;
+  
+  
+}
+
+.col {
+  float: left;
+
+
+}
+
+.col-left {
+  width: 58%;
+  
+}
+
+.col-right {
+  width: 42%;
+
+}
+
+
+img {
+  width: 100%;
+
+ 
+}
+
+.row {
+  border: 1px red solid;
+  padding: 1% 1% 2% 1%;
+
+
+}
+    
+    
+    .hompage_cover{
+      margin: 0;
+      padding-top:130px;
+      padding-left:200px;
+      padding-right: 200px;
+      height: 400px;
+      background-image: url({% static 'cscr/img/background.JPG'%});
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+    .title{
+      padding-bottom: 15px;
+      padding-top: 15px;
+      text-align: center;
+      border-width: 10px;
+      border-color: #5980a6;
+      border-style: outset;
+      margin:0;
+    }
+
+
+    .media-body{
+
+      padding-top: 10px;
+      width: 90%;
+
+
+
+    }
+    .media-body p{
+      text-overflow: ellipsis;
+      word-break: normal;
+      color:black ;
+    }
+    .image{
+     
+      max-width: 450px;
+      max-height: 400px;
+    }
+    .col-6{
+      width: 500px;
+      height: 300px;
+      padding-top: 1%;
+    }
+    .col-6 img{
+      width: 450px;
+      height: 300px;
+
+    }
+
+
+    .right{
+      flex: 1;
+      padding-top: 0;
+      padding-right: 3px;
+      padding-left: 3%;
+    }
+    .left{
+
+      width:325px;
+      background-color:#77867F;
+      padding-top: 1%;
+      padding-right: 2%;
+      padding-left: 2%;
+      padding-bottom: 0;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+
+    }
+
+    .right img{
+      width: 400px;
+      height: 200px;
+    }
+
+
+
+
+    p{
+      font-size: 15px;
+
+    }
+    h2,h8,p{
+      color:#FFFFF8;
+    }
+
+    h3{
+      color: #FCFAF2;
+    }
+    .left h3{
+       color: #FCFAF2;
+    }
+    .left h4{
+       color: #FCFAF2;
+    }
+
+</style>
+
+
+
+
+
+</body>
+
+{% endblock %}
+</html>
+
+

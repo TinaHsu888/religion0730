@@ -1,0 +1,192 @@
+{% extends 'cscr/base.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>publication_2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	{% block content %}
+		<div class="content" style="background-image: url({% static 'cscr/img/pattern.png' %}) ;">
+      
+
+    
+
+
+
+    <div class="main">
+          <div class="left" ><!-- left start -->
+          	<h3 style="text-align: center; size: 18px;">出版品<h3>
+       
+              	<div id="submenu"><!-- submenu start-->
+              		<ul id="ul_submenu_0" class="">
+          		 				<li class="odd">
+          		 				<span ><a  style=" color: white;" href="/all/"><span>總覽</span></a></span></li>
+          		 				<li class="odd"><span><a style=" color: white;" href="/publications/"><span>期刊</span></a></span></li>
+          		 				<li class="odd"><span><a  style=" color: white;" href="/conference&books/"><span>專書及會議論文</span></a></span></li>
+		 			        </ul>
+              	</div><!--submenu end -->
+              
+          </div><!-- left end -->
+
+           
+
+      <div class="container">
+      	<div class="title">
+      		<h3>
+      			期刊 Journals
+      		</h3>
+      		
+      	</div>
+      	<div class="row">
+        {% for journal in journals_list %}
+        <div class="col-4" >
+          <a href="/">
+            {% if journal.img_photo %}
+                <img class="media-image" src="/{{journal.img_photo}}" alt="{{journal.img_photo}}" style="width: 250px;">
+              {% else %}
+                  <img class="media-image" src="/{{journal.img_url}}" alt="{{journal.img_url}}" style="width: 250px;">
+              {% endif %}
+          </a>
+      
+          <p>
+            年份：{{journal.published_date}}</br>
+            作者：{{journal.author}}</br>
+            書名：{{journal.title}}
+          </p>
+     
+        </div>
+        {% endfor %}
+
+		</div>
+
+
+
+     
+     
+
+       
+          
+
+      </div><!--container end -->
+    </div><!-- main end -->
+</div><!-- content end -->
+
+
+<style type="text/css">
+    *{
+        font-family: 'Open Sans', sans-serif;
+              }
+
+    .main {
+
+      display: flex;
+      max-width: 960px;
+      position: relative;
+      padding: 2% 6% 8% 6%;
+      max-width: 1440px;
+      margin: 0 auto -7px auto;
+      margin-left:0px; 
+    }
+    .container{
+      padding-top: 10px;
+      padding-left:2%;
+      margin-right:0; 
+      background-color: white;
+      width: 810px;
+    }
+    .search{
+      padding-top: 3%;
+      padding-left: 6%;
+      padding-bottom: 0;
+      margin: 0;
+    }
+    #submenu ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    #submenu li a{
+      padding-top: 1%;
+      text-align: center;
+      display: block;
+      height: 40px;
+      width: auto;
+      text-decoration: none;
+
+
+    }
+    #submenu a:hover{
+        background-color: #B5CAA0;
+        border-radius: 15px;
+        border: 2px solid #f7f7f7;
+    }
+    .left{
+     
+      width:315px; 
+      background-color:#77867F; 
+      padding-top: 1%; 
+      padding-right: 3%; 
+      padding-left: 3%;
+      padding-bottom: 0;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+
+    }
+    .left .odd{
+    	margin: 1%;
+    }
+
+    
+    row{
+    	margin-top: 1%;
+    }
+	.col-4{
+		height: 450px;
+		width: 350px;
+		padding-left:13px; 
+		margin: 0;
+	}
+	.col-4 img{
+		width:240px;
+		height: 300px; 
+		margin: 0;
+		margin-top: 2%;
+	}
+	.col-4 p{
+		color: black;
+	}
+    h2,h8,p{
+   
+      word-break: break-all;
+    }
+
+    .left h3{
+      color: #FCFAF2;
+    }
+    .left h4{
+       color:#FFFFF8;
+       text-align: center;
+    }
+
+    .left2 p{
+      font-size: 13px;
+    }
+
+    
+
+</style>
+	{% endblock %}
+
+</body>
+</html>

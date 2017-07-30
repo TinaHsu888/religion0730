@@ -1,0 +1,79 @@
+{% extends 'cscr/publication_2.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+ 
+    <div class="search">
+            <h2>搜尋：</h2>
+            <form  class="form-inline my-2 my-lg-0" method="get" action=".">
+     
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="輸入作者或期刊名">
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
+
+            </form>
+        <!--<input type="submit" value="Search">-->
+    </div>
+       
+  
+
+       {% if query %}
+       <div class="result">
+            <h2>搜尋結果:</h2>
+        </div>
+
+            {% for result in page.object_list %}
+
+                
+                  <div class="container">
+                   
+                    <div class="row">
+                   
+                        <div class="col-4" >
+                          <a href="/">
+                            {% if result.object.img_photo %}
+                                <img class="media-image" src="/{{result.object.img_photo}}" alt="{{result.object.img_photo}}" style="width: 250px;">
+                              {% else %}
+                                  <img class="media-image" src="/{{result.object.img_url}}" alt="{{result.object.img_url}}" style="width: 250px;">
+                              {% endif %}
+                          </a>
+                          <p>
+                            年份：{{result.object.published_date}}</br>
+                            作者：{{result.object..author}}</br>
+                            書名：{{result.object.title}}
+                          </p>
+                        </div>
+                    </div>
+            {% endfor %}
+            
+
+            {% if page.has_previous or page.has_next %}
+                <div>
+                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                    |
+                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+
+                
+        {% endif %}
+
+        </div>
+
+        <style type="text/css">
+            .search{
+                padding-top:3% ;
+                padding-left: 5%;
+            }
+            .result{
+
+                padding-top:2% ;
+                padding-left: 5%;
+            }
+            }
+        </style>
+    
+{% endblock %}

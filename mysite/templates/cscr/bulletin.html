@@ -1,0 +1,249 @@
+{% extends 'cscr/base.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>bulletin</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'cscr/js/gotop.js'%}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+
+
+ 
+</head>
+<body>
+	{% block content %}
+  <script type="text/javascript">
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+}
+  </script>
+
+    
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	
+	 <div class="content" style="background-image: url({% static 'cscr/img/pattern.png' %}) ;">
+
+  		<div class="main">
+          	<div class="left" >
+
+              	<h3 style="text-align: center;">公佈欄<h3>
+                <h4 style="text-align: center;">Bulletin<h4>
+                <p>
+                {% for news in latest_bulletin_list %}
+                  <p>{{news.title}}</p>
+                {% endfor %}
+          	</div>
+
+      	<div class="container">
+     
+        {% for bulletin in latest_bulletin_list %}
+              <!--從資料庫抓新聞 -->
+              <!--put argument into template-->
+              <div class="media-body"  ><!--- media body start -->
+                  <h4 class="media-heading">
+                      {{bulletin.title}}
+                  </h4>
+                  <h6>
+                    公告日期：{{bulletin.created_date}}
+                  </h6>
+                  <p>
+                    {{bulletin.text}}
+                  </p>
+
+                  <div class="row" ><!-- row start -->
+                    <div class="col-sm-5" >
+                      {% if bulletin.photo280_400 %}
+                          <img class="media-image image" src="/{{bulletin.photo280_400}}" alt="{{bulletin.photo280_400}}">
+                      {% else %}
+                          <img class="media-image image" src="{{bulletin.img_url}}" alt="{{bulletin.img_url}}" >
+                      {% endif %}
+                    </div>
+                    <div class="col-sm-5">
+                      {% if bulletin.photo280_400_2 %}
+                        <img class="media-image image" src="/{{bulletin.photo280_400_2}}" alt="{{bulletin.photo280_400_2}}">
+                      {% endif %}
+                    </div>
+                  </div><!-- row end -->
+
+                   <!--橫的照片-->
+                  <div class="row">
+                  {% if bulletin.photo450_300 %} 
+                    <div class="col-6">
+                        <img src="{{bulletin.photo450_300}}">
+                    </div>
+                  {% endif %}
+                  </div>                      
+                      <!-- video start-->
+                  <div class="row" style="margin-top:2%;" ><!-- row start -->
+                      {% if bulletin.video_url %}
+                      <div class="video">
+                        <iframe src=" {{bulletin.video_url}}" style="height: 300px;width: 500px;">
+                        </iframe>
+                      </div>
+                      {% endif %}
+                      <!-- video end-->
+                  </div><!-- row end -->
+
+              <hr>
+            </div><!--media_body end -->
+            {% endfor %}
+
+
+
+
+            
+
+
+
+
+
+      </div><!--container end -->
+    </div><!-- main end -->
+    </div><!-- content end -->
+
+
+
+<style type="text/css">
+    *{
+        font-family: 'Open Sans', sans-serif;
+              }
+    #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 30px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color:#ED784A; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    }
+
+    #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+
+    .main {
+
+      display: flex;
+      width: 80em;
+      position: relative;
+      padding: 6% 6% 8% 6%;
+      max-width: 1440px;
+      margin: 0 auto -7px auto;
+      margin-left:0px; 
+    }
+    .container{
+      padding-top: 3%;
+      padding-left:2%;
+      margin-right:0; 
+      background-color: white;
+      width: 900px;
+   
+    }
+    .media-body{
+
+      padding-top: 10px;
+      width: 90%;
+    }
+    .media-body p{
+      word-break: break-all;
+      color:black ;
+    }
+    .image{
+     
+      max-width: 450px;
+      max-height: 400px;
+    }
+
+    .col-6{
+      width: 500px;
+      height: 300px;
+      padding-top: 1%;
+    }
+    .col-6 img{
+      width: 450px;
+      height: 300px;
+
+    }
+
+    .right{
+      flex: 1;
+      padding-top: 0; 
+      padding-right: 3px; 
+      padding-left: 3%;
+    }
+    .left{
+     
+      width:300px; 
+      background-color:#77867F; 
+      padding-top: 1%; 
+      padding-right: 2%; 
+      padding-left: 2%;
+      padding-bottom: 0;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+
+    }
+    
+    .right img{
+      width: 400px;
+      height: 200px;
+    }
+    
+
+    p{
+      font-size: 15px;
+	    word-wrap:break-word;
+    }
+     h2,h8,p{
+      color:#FFFFF8;
+    }
+    .left h3{
+      color: #FCFAF2;
+    }
+    .left h4{
+      color: #FCFAF2;
+    }
+
+    .left2 p{
+      font-size: 13px;
+    }
+
+
+
+</style>
+	
+
+	{% endblock %}
+
+	
+</body>
+</html>

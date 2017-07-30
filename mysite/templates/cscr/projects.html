@@ -1,0 +1,202 @@
+{% extends  'cscr/base.html' %}
+{% load static %}
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>project</title>
+</head>
+<body>
+  
+
+
+{% block content%}
+
+  <script type="text/javascript">
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+}
+  </script>
+
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div class="content" style="background-image: url({% static 'cscr/img/pattern.png' %}) ;">
+  <div class="main">
+          <div class="left" >
+          	<h3 style="text-align: center;">研究計畫<h3>
+              <h4 style="text-align: center;">Projects<h4>
+                <p>
+              {% for project in project_list %}
+              	<p>
+              		{{project.project_name}}
+              	</p>
+              {% endfor %}
+              
+          </div>
+
+      <div class="container">
+     
+     
+
+        <!--新聞一 -->
+        {% for project in project_list %}
+        <div class="row"><!-- row start-->
+          <div class="col-md-6">
+          	<div class=" media-body"  ><!--- media body start -->
+              <a href="{{project.url}}" target="_blank">
+            	   <h4 class="media-heading">{{project.project_name}}</h4>
+              </a>
+            	<h6>公告日期：{{project.created_date}}</h6>
+            	<p>
+	              {{project.text}} 
+            	</p>
+            </div> 	
+          </div><!--col-md-6 -->
+			     <div class=' col-md-5' style="padding-top: 30px; ">
+            <a href="{{project.url}}" target="_blank">
+             		{% if project.img_photo %}
+                    <img class="media-image" src="/{{project.img_photo}}" alt="{{project.img_photo}}" style="max-height: 300px; max-width:300px;">
+                {% else %}
+                    <img class="media-image" src="{{project.img_url}}" alt="{{project.img_url}}" style="max-height: 300px; max-width:300px;">
+                {% endif %}
+              </a>
+            </div>
+            
+          
+        </div><!-- row end -->
+        <hr>
+        {% endfor %}
+
+
+      </div><!--container end -->
+    </div><!-- main end -->
+</div><!-- content end -->
+
+
+<style type="text/css">
+      *{
+        font-family: 'Open Sans', sans-serif;
+              }
+     #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 30px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color:#ED784A; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+    .main {
+
+      display: flex;
+      width: 80em;
+      position: relative;
+      padding: 6% 6% 8% 6%;
+      max-width: 1440px;
+      margin: 0 auto -7px auto;
+      margin-left:0px; 
+    }
+    .container{
+      padding-top: 10px;
+      padding-left:2%;
+      margin-right:0; 
+      background-color: white;
+      width: 820px;
+    }
+
+
+    .media-body{
+
+      padding-top: 10px;
+      width: 90%;
+
+
+
+    }
+    .media-body p{
+      word-break: normal;
+      color:black ;
+    }
+
+    .right{
+      flex: 1;
+      padding-top: 0; 
+      padding-right: 3px; 
+      padding-left: 3%;
+    }
+    .left{
+     
+      width:325px; 
+      background-color:#77867F; 
+      padding-top: 1%; 
+      padding-right: 3%; 
+      padding-left: 3%;
+      padding-bottom: 0;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+
+    }
+    
+    .right img{
+      width: 400px;
+      height: 200px;
+    }
+    .media-body a{
+       text-decoration: none;
+       color: #43341B;
+    }
+    .media-body a:hover{
+      color: #E2943B;
+    }
+    p{
+      font-size: 15px;
+
+    }
+    h2,h8,p{
+      color:#FFFFF8;
+    }
+
+    .left h3{
+      color: #FCFAF2;
+    }
+    .left h4{
+      color: #FCFAF2;
+    }
+
+    .left2 p{
+      font-size: 13px;
+    }
+
+</style>
+
+</body>
+</html>
+
+{% endblock %}
+
+

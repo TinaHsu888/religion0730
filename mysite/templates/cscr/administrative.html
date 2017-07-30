@@ -1,0 +1,125 @@
+{% extends  'cscr/base.html' %}
+{% load static %}
+
+{% block content %}
+
+ <div class="main">
+	 	<div class="container">
+
+	 		
+	 			<div id="submenu">
+	 				<h2 style="color: white;"><span>中心人員</span></h2>
+	 				<div id="submenu_b">
+		 				<ul id="ul_submenu_0" class="">
+		 				<li class="odd">
+		 				<span ><a  style=" color: white;" href="/people/"><span>主任與研究人員</span></a>
+		 				</span></li>
+		 				<li class="odd"><span><a style=" color: white;" href="/committee/"><span>諮詢委員</span></a></span></li>
+		 				<li><span><a  style=" color: white;" href="/scholar/"><span>訪問學人</span></a></span></li>
+		 				<li><span><a  style=" color: white;" href="/administrative/"><span>行政人員</span></a></span></li>
+		 				</ul>
+	 				</div>
+	 			</div>
+	 		
+
+
+
+				<!--list開始 -->
+				<h4 style="padding-top: 10px;">行政人員</h4>
+				
+				<div class="teacher_list">
+					{% for people in people_list %}
+					<!--media開始-->
+					<div class="media">
+						<div class="media-body">
+							<li><strong><a href="{{people.name_url}}">{{people.name}}</a></strong></li>
+							<li>職稱：{{people.job_title}}</li>
+							<li class="mail">信箱：<span class="glyphicon glyphicon-send" aria-hidden="true"><a href="{{people.mail}}">{{people.mail}}</a></span></li>
+							<li>研究專長：{{people.specialty}}</li>
+							<li>著作目錄：{{people.publications_list}}</li>
+							<li>說明：{{people.text}}</li>
+						</div>
+						<div class="media-right media-middle">
+							<img src="/{{people.img_photo}}" alt="{{people.img_photo}}" >
+						</div>
+					</div>
+					<!--media結束-->
+					{% endfor %}
+				</div>
+					<!--list結束-->
+
+
+		</div>
+	 	
+	 	 	
+	 </div>
+	 <style type="text/css">
+		*{
+    		font-family: 'Open Sans', sans-serif;
+    		    	}
+    	
+		.main{
+			
+			height: 100%;
+			background-color: #424242;
+		}
+		.container{
+			background-color: white;
+			width: 900px;
+		}
+		#submenu {
+
+			    background: #395c54;
+			    padding: 36px 0 36px 30px;
+			    width: 212px;
+			    float: right;
+			    margin: -28px 0 0 0;
+			    margin-top: 0px;
+			    margin-right:-15px ;
+			}
+
+
+
+		#submenu li {
+			    margin: 0 0 6px 0;
+			    padding: 0 0 6px 0;
+			    overflow: hidden;
+			    border-bottom: 1px solid #476d64;
+
+			}
+
+		.info{
+				width: 70%;
+				padding: 10px;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #E0E0E0;
+				margin: 20px;
+		}
+		.media{
+				width: 70%;
+				padding: 10px;
+				padding-right: 40px;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #E0E0E0;
+				margin: 20px;
+		}
+		.media-right img{
+
+			width: 90px;
+			height: 120px;
+		}	
+		li{
+			list-style: none;
+			margin:0 0 10px 0;
+		}
+		span .glyphicon glyphicon-send{
+			margin-right:  10px;
+		}
+
+		
+	</style>
+
+
+{% endblock %}

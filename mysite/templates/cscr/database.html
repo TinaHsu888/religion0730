@@ -1,0 +1,247 @@
+{% extends  'cscr/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>database</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+{% block content %}
+<div class="content " style="background-image: url({% static 'cscr/img/pattern.png' %}) ;">
+  
+      <div class="main">
+            <div class="left" >
+                <h3 style="text-align: center;size: 18px;">最新消息<span></br>Latest News</span><h3>
+                <div class="database" style="margin: 5%;padding-top: 5%;">
+                <h4 style="color:#FFFFF8; ">
+                  資料庫一
+                </h4>
+
+                <h4 style="color:#FFFFF8;">
+                  資料庫二
+                </h4>
+
+                </div>
+                  
+                
+            </div>
+
+        <div class="container"><!--container start-->
+          <div class="media"><!-- media start-->
+              <div class="title">
+                <h4>資料庫一</h4>
+                <p>
+                  為鼓勵地政學系學士班優秀學生於本系碩士班就讀，培植優秀人才，達到連續學習效果，縮短學、碩士業年限，以使學生早日就業或升學，特訂國立政治大學地政學系學生五年一貫修讀學、碩士學位鼓勵辦法。 申請同學請於五月十日前，繳交下列各項資料乙份作為審查之依據：
+                </p>
+              </div>
+                <div class="container2">
+                  <img src="{% static 'cscr/img/homepage.png'%}" alt="Avatar" class="image">
+                  <a href="/">
+                    <div class="overlay">
+                      <div class="text">
+                      前往資料庫
+                      </div>
+
+                    </div>
+                  </a>
+                </div>
+            </div><!-- media end-->
+          
+          <hr>
+
+          <div class="media"><!-- media start-->
+              <div class="title">
+                <h4>資料庫二</h4>
+                <p>
+                  為鼓勵地政學系學士班優秀學生於本系碩士班就讀，培植優秀人才，達到連續學習效果，縮短學、碩士業年限，以使學生早日就業或升學，特訂國立政治大學地政學系學生五年一貫修讀學、碩士學位鼓勵辦法。 申請同學請於五月十日前，繳交下列各項資料乙份作為審查之依據：
+                </p>
+              </div>
+            <div class="media-body" >
+                <div class="container2">
+                  <img src="{% static 'cscr/img/homepage.png'%}" alt="Avatar" class="image" >
+                  <a href="/">
+                    <div class="overlay">
+                      <div class="text">前往資料庫</div>
+
+                    </div>
+                  </a>
+                </div>
+
+            </div>
+          </div><!-- media end-->
+          <hr>
+
+
+        </div><!--container end -->
+
+
+
+        
+              
+            
+          
+
+
+      </div><!-- main end -->
+</div><!-- content end -->
+
+
+
+<style type="text/css">
+    *{
+        font-family: 'Open Sans', sans-serif;
+              }
+
+    .main {
+
+      display: flex;
+      width: 80em;
+      position: relative;
+      padding: 6% 6% 8% 6%;
+      max-width: 1440px;
+      margin: 0 auto -7px auto;
+      margin-left:0px; 
+    }
+    .container{
+      padding-top: 10px;
+      padding-left:2%;
+      margin-right:0; 
+      background-color: white;
+      width: 900px;
+   
+    }
+
+
+    .media{
+      
+      margin: 3%;
+      margin-left: -5%;
+      padding: 2%;
+      padding-left: 100px;
+    }
+    .title{
+      margin-right: 15px;
+      padding-right:5px;
+      width: 250px;
+    }
+
+    .media-left{
+    margin: 0;
+    padding-right: 100px;
+
+    }
+
+
+    .right{
+      flex: 1;
+      padding-top: 0; 
+      padding-right: 3px; 
+      padding-left: 3%;
+    }
+    .left{
+     
+      width:300px; 
+      background-color:#77867F; 
+      padding-top: 1%; 
+      padding-right: 2%; 
+      padding-left: 2%;
+      padding-bottom: 0;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+
+    }
+    
+    .right img{
+      width: 400px;
+      height: 200px;
+    }
+    img{
+
+    }
+
+  
+    p{
+      font-size: 15px;
+      word-wrap:break-word;
+    }
+
+    
+    h2,h8{
+      color:#FFFFF8;
+    }
+    h3{
+      color: #FCFAF2;
+    }
+
+    .left2 p{
+      font-size: 13px;
+    }
+
+
+
+    .container2 {
+      position: relative;
+      width: 50%;
+    }
+
+    .image {
+      display: block;
+      width: 450px;
+      height: auto ;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      background-color: #90B44B;
+      overflow: hidden;
+      width: 450px;
+      height:0;
+      transition: .8s ease;
+    }
+
+    .container2:hover .overlay {
+      bottom: 0;
+      height: 100%;
+      opacity: 0.8;
+    }
+
+    .text {
+      white-space: nowrap; 
+      color: white;
+      font-size: 30px;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+</style>
+  
+
+{% endblock %}
+  
+</body>
+</html>
+

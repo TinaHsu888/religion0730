@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<style type="text/css">
+  		* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-decoration: underline;
+  margin-bottom: 40px;
+}
+
+p strong {
+  font-size: 1.6rem;
+  color: royalblue;
+  font-weight: bold;
+}
+
+section {
+  margin-top: 30px;
+  border-top: 1px solid green;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.row {
+  outline: 5px solid red;
+  overflow:auto;
+}
+
+.column {
+  border: 5px solid blue;
+  float: left;
+  width: 33.333%;
+  text-align:center;
+}
+
+span {
+  background-color: white;
+}
+
+
+
+.responsive .row,
+.fluid .row {
+  max-width: 900px;
+}
+
+.static .content,
+.fluid .content,
+.responsive .content {
+background-color: orange;
+  min-height: 200px;
+    padding: 50px;
+}
+
+.fluid .relative .content {
+  padding: 30%;
+}
+
+.static .content {
+  
+}
+@media screen and (max-width: 1100px){
+  .responsive .column {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .responsive .column {
+    width: 100%;
+  }
+}
+  	</style>
+</head>
+<body>
+	<div class="header" style="margin: 0;">
+
+
+		
+		
+		<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+		  
+		    <ul class="navbar-nav mr-auto " style="font-size: 15px; text-align: center;margin: 0; ">
+		    	<li><a href="/">首頁<br>Homepage</a></li>
+		      	<li><a href="/introduction/">簡介<br>Introduction<span class="sr-only">(current)</span></a></li>
+		        <li><a href="/bulletin"> 公布欄<br>Bulletin</a></li>
+		        <li><a href="/people/"> 中心人員<br>People</a></li>
+		        <li><a href="/projects/"> 研究計畫<br>Projects</a></li>
+		        <li><a href="/achievements/">學術成果<br>Achievements</a></li>
+		        <li><a href="/publications/">出版品<br>Publications</a></li>
+		        <li><a href="/database/">資料庫<br>Database</a></li>
+		       	<li><a href="/search/">搜尋期刊<br>Search</a></li>
+
+		    </ul>  
+		</nav>	
+	</div>
+
+	<div class="container">
+
+
+
+
+
+
+<section class="responsive">
+  <h2>Responsive</h2>
+  <p>Even though there's room for 3, we can use media queries to express that we want each column to be 50% of the width. Then, at a 'breakpoint' of 500px, we can change them to be in a column by setting their width to 100% of the remaining space</p>
+    <div class="row">
+    <div class="column">
+      <div class="content"><span>Mary had a little lamb</span></div>
+    </div>
+        <div class="column">
+      <div class="content">
+        <span>Who's fleece was white</span>
+          </div>
+    </div>
+        <div class="column">
+          <div class="content"><span>as snow! And everywhere...</span></div>
+    </div>
+  </div>
+</section>
+  
+  </div>
+
+	
+</body>
+</html>

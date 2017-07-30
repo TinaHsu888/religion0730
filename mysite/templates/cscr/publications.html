@@ -1,0 +1,172 @@
+{% extends 'cscr/base.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="page">
+    <h4 style="color: black; padding-left: 10px;"> 搜尋：</h4>
+
+ 
+<table class="layout display responsive-table">
+    <thead>
+        <tr>
+           <th width="8%">
+            類型
+          </th>
+          <th width="60%">
+            著作
+          </th>
+          <th width="9%">
+             著作人
+          </th>
+          <th width="25%">
+             相關照片
+          </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for publication in publications_list %}
+        <tr>
+            <td class="organisationtype">
+            {{publication.book_type}}
+            </td>
+            <td class="organisationname">
+              {{publication.title}}
+            </td>
+            <td class="organisationauthor">
+              {{publication.author}}
+            </td>
+            <td class="organisationpic">
+              {% if publication.img_photo %}
+                <img class="media-image" src="/{{publication.img_photo}}" alt="{{publication.img_photo}}" style="width: 250px;">
+              {% else %}
+                  <img class="media-image" src="{{publication.img_url}}" alt="{{publication.img_url}}" style="width: 250px;">
+              {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+</div>
+
+
+<style type="text/css">
+  body{
+ 
+  
+}
+a{
+  color: #739931;
+}
+.page{
+  padding-top: 3%;
+  max-width: 60em;
+  margin: 0 auto;
+}
+table th,
+table td{
+  text-align: left;
+}
+table.layout{
+  width: 100%;
+  border-collapse: collapse;
+}
+table.display{
+  margin: 1em 0;
+}
+table.display th,
+table.display td{
+  border: 1px solid #B3BFAA;
+  padding: .5em 1em;
+}
+
+table.display th{ background: #D5E0CC; }
+table.display td{ background: #fff; }
+
+table.responsive-table{
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+table.display td .organisationpic img{
+      width:150px; 
+      height: 100px;
+    }
+
+  @media (max-width: 30em){
+        table.responsive-table{
+          box-shadow: none;  
+        }
+        table.responsive-table thead{
+          display: none; 
+        }
+        table.display th,
+        table.display td{
+        padding: .5em;
+      }
+        
+      table.responsive-table td:nth-child(1):before{
+        content: '類型';
+      }
+      table.responsive-table td:nth-child(2):before{
+        content: '著作';
+      }
+       table.responsive-table td:nth-child(3):before{
+        content: '著作人';
+      }
+
+      table.responsive-table td:nth-child(1),
+      table.responsive-table td:nth-child(2),
+      table.responsive-table td:nth-child(3){
+        padding-left: 25%;
+      }
+      table.responsive-table td:nth-child(1):before,
+      table.responsive-table td:nth-child(2):before{
+        position: absolute;
+        left: .5em;
+        font-weight: bold;
+      }
+      table.responsive-table td:nth-child(3):before{
+        font-weight: bold;
+        position: absolute;
+        left: .5em;
+      }
+
+      
+        table.responsive-table tr,
+        table.responsive-table td{
+            display: block;
+        }
+        table.responsive-table tr{
+            position: relative;
+            margin-bottom: 1em;
+          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        }
+        table.responsive-table td{
+            border-top: none;
+        }
+        table.responsive-table td.organisationtype{
+            background: #D5E0CC;
+            border-top: 1px solid #B3BFAA;
+        }
+        table.responsive-table td.organisationpic img{
+        max-width: 100%;
+        height: auto;
+        }
+       
+        table.responsive-table th{
+          font-weight: bold;
+        } 
+        img{
+          width: 100px;
+          height: 150px;
+        }
+
+
+
+</style>
+
+{% endblock %}
