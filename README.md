@@ -6,4 +6,4 @@ run server的方法<br>
 (3) 另一個terminal 就可以runserver<br>
 
 on Ubuntu<br>
--pip install pysolr
+-sudu pip install pysolr
